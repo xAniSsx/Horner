@@ -15,7 +15,7 @@ int main()
     FILE *fptr; //tworzenie wskaznika do pliku tekstowego
     int *a;
 
-    if ((fptr = fopen("C:/Users/Root/Desktop/github/Horner/horner.txt","r")) == NULL) //otwieranie pliku tekstowego
+    if ((fptr = fopen("D:/studia/podstawy informatyki/github/Horner/horner.txt","r")) == NULL) //otwieranie pliku tekstowego
     {
        printf("Error opening file!\n");
        exit(1); //?
@@ -31,22 +31,23 @@ int main()
     }
     fclose(fptr); //zamkniecie pliku tekstowego
 
+    printf("Twoje wspolczynniki to: ");
+
     for (i = 0; i < n; ++i)
-        printf("%d\n", a[i]);
+        printf("%d, ", a[i]);
+
+    printf("\n");
 
     n=n-1; //Zaczynamy odczytywanie tablicy od tylu. W n-tej komorce znajduje sie null, czyli znak konca, wiec musimy pobierac wartosci wspolczynnikow wielomianu od komorki n-1.
     j=n;
 
-    for(i=0; i<j-1; i++)
+    for(i=0; i<j-1; i++) //odwracanie elementow tablicy
     {
         k=a[i];
         a[i]=a[j];
         a[j]=k;
         j--;
     }
-
-    for (i = 0; i <= n; ++i)
-        printf("%d\n", a[i]);
 
     if (n>0)
     {
@@ -63,10 +64,7 @@ int main()
         w=a[0]; //W przypadku, gdy stopien wielomianu n jest rowny 0, wynikiem bedzie wyraz wolny wielomianu.
         printf("Wynik wynosi: %.2f",w);
     }
-
-    fptr = fopen("C:/Users/Root/Desktop/github/Horner/horner.txt","w");
-
-    if(fptr == NULL)
+    if ((fptr = fopen("D:/studia/podstawy informatyki/github/Horner/horner.txt","w")) == NULL) //w liniach 68-77 -> wpisywanie do pliku
     {
         printf("Error!");
         exit(1);
