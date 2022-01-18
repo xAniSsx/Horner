@@ -15,7 +15,7 @@ int main()
     FILE *fptr; //tworzenie wskaznika do pliku tekstowego
     int *a;
 
-    if ((fptr = fopen("D:/studia/podstawy informatyki/github/Horner/horner.txt","r")) == NULL) //otwieranie pliku tekstowego
+    if ((fptr = fopen("C:/Users/Root/Desktop/github/Horner/horner.txt","r")) == NULL) //otwieranie pliku tekstowego
     {
        printf("Error opening file!\n");
        exit(1); //?
@@ -62,8 +62,18 @@ int main()
     {
         w=a[0]; //W przypadku, gdy stopien wielomianu n jest rowny 0, wynikiem bedzie wyraz wolny wielomianu.
         printf("Wynik wynosi: %.2f",w);
-
     }
+
+    fptr = fopen("C:/Users/Root/Desktop/github/Horner/horner.txt","w");
+
+    if(fptr == NULL)
+    {
+        printf("Error!");
+        exit(1);
+    }
+
+    fprintf(fptr, "Wynik wynosi: %.2f",w);
+    fclose(fptr);
 
     return 0;
 }
