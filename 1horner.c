@@ -17,7 +17,7 @@ int main()
     if ((fptr = fopen("C:/Users/Root/Desktop/github/Horner/horner.txt","r")) == NULL)//otwieranie pliku tekstowego
     {
        printf("Error opening file!\n");
-       exit(1);
+       exit(1);//wyrzuca blad - wychodzi z programu
     }
     while (fscanf(fptr,"%d", &i) > 0)
     {
