@@ -5,7 +5,7 @@ float w; //w -> wartosc wielomianu
 float x; //x -> argument, dla ktorego obliczamy wartosc
 int n = 0; //n -> stopien wielomianu
 int i; //i -> zmienna dodatkowa
-//int j, k;
+int j, k;
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
         printf("%d\n", a[i]);
 
     n=n-1; //Zaczynamy odczytywanie tablicy od tylu. W n-tej komorce znajduje sie null, czyli znak konca, wiec musimy pobierac wartosci wspolczynnikow wielomianu od komorki n-1.
-/*  j==n;
+    j=n;
 
     for(i=0; i<j-1; i++)
     {
@@ -45,9 +45,9 @@ int main()
         j--;
     }
 
-    for (i = 0; i < n; ++i)
+    for (i = 0; i <= n; ++i)
         printf("%d\n", a[i]);
-*/
+
     if (n>0)
     {
         w=a[n]*x+a[n-1]; //Mnozymy wspolczynnik a[n] przy najwiekszej potedze n przez argument x, nastepnie dodajemy do otrzymanej wartosci wspolczynnik przy mniejszej o 1 potedze.
